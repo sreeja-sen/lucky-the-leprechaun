@@ -129,7 +129,7 @@ let platform = [
     //lv 3
     new Platform({x: 50, y: -1000, image}),
     new Platform({x: 450, y: -1100, image}),
-    new Platform({x: 50, y: -1200, image}),
+    new Platform({x: 50, y: -1300, image}),
 
 ]
 
@@ -166,7 +166,7 @@ function restart() {
         //lv 3
         new Platform({x: 50, y: -1000, image}),
         new Platform({x: 450, y: -1100, image}),
-        new Platform({x: 50, y: -1200, image}),
+        new Platform({x: 50, y: -1300, image}),
   
     ]
 
