@@ -89,6 +89,8 @@ class Player {
     }
 }
 
+
+
 //player movement
 const keys = {
     d: {
@@ -109,6 +111,7 @@ let background = new Sprite({
 
 let image = new Image()
 image.src = "level.png"
+
 let player = new Player();
 
 let platform = [
@@ -129,8 +132,8 @@ let platform = [
     //lv 3
     new Platform({x: 50, y: -1000, image}),
     new Platform({x: 450, y: -1100, image}),
-    new Platform({x: 50, y: -1300, image}),
-
+    new Platform({x: 50, y: -1250, image}),
+    
 ]
 
 let scrollOffset = 0;
@@ -166,13 +169,14 @@ function restart() {
         //lv 3
         new Platform({x: 50, y: -1000, image}),
         new Platform({x: 450, y: -1100, image}),
-        new Platform({x: 50, y: -1300, image}),
+        new Platform({x: 50, y: -1250, image}),
   
     ]
 
     scrollOffset = 0;
-
 }
+
+
 
 //animation frame
 function animate() {
@@ -218,8 +222,13 @@ function animate() {
 
         platform.forEach(platform => {
             background.position.y += 2.5
-            platform.position.y += 2.5
+            platform.position.y += 3
         })
+    }
+
+    //win scenario
+    if (scrollOffset >= 650) {
+        console.log('you win')
     }
 }
 
@@ -247,16 +256,6 @@ window.addEventListener('keydown', (event) => {
                 player.velocity.y -= 9
             }
 
-            /*
-            if (player.position.y + player.height <= 250) {
-                scrollOffset += 9
-
-                platform.forEach(platform => {
-                    background.position.y += 9
-                    platform.position.y += 9
-                })
-            }
-            */
             break;
     }
 })
